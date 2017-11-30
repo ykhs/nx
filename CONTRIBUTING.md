@@ -77,3 +77,11 @@ feat(schematics): add an option to generate lazy-loadable modules
 
 `ng generate lib mylib --lazy` provisions the mylib project in tslint.json
 ```
+
+## Migrations
+
+Nx allows the users to automatically upgrade to the newest version of Nx. If you are introducing a change that would require the users to upgrade their workspace, add a migration to `packages/schematics/migrations`.
+
+Migrations are named in the following fashion: `currentVersionOfNx-YYYYMMDD-name.ts` (e.g., 0.2.2-20171129-change-schema.ts).
+
+The `yarn nx-migrate` command will run all the migrations after the oneencoded in .angular-cli.json.
